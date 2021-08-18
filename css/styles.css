@@ -7888,6 +7888,36 @@ textarea.form-control-lg {
   background-color: rgb(var(--prime-blue-rgb), var(--bs-bg-opacity)) !important;
 }
 
+.bg-blue {
+  --bs-bg-opacity: 1;
+  background-color: rgb(var(--prime-blue-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-yellow {
+  --bs-bg-opacity: 1;
+  background-color: rgb(var(--prime-yellow-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-red {
+  --bs-bg-opacity: 1;
+  background-color: rgb(var(--prime-red-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-green {
+  --bs-bg-opacity: 1;
+  background-color: rgb(var(--prime-green-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-pink {
+  --bs-bg-opacity: 1;
+  background-color: rgb(var(--prime-pink-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-grey {
+  --bs-bg-opacity: 1;
+  background-color: rgb(var(--prime-grey-rgb), var(--bs-bg-opacity)) !important;
+}
+
 .bg-dark {
   --bs-bg-opacity: 1;
   background-color: rgba(00, 00, 00, var(--bs-bg-opacity)) !important;
