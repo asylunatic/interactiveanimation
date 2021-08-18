@@ -505,6 +505,24 @@ progress {
   font-weight: 300;
 }
 
+.lead-yellow{
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--prime-yellow);
+}
+
+.lead-pink{
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--prime-pink);
+}
+
+.lead-darkblue{
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--prime-darkblue);
+}
+
 .display-1 {
   font-size: calc(1.625rem + 4.5vw);
   font-weight: 300;
@@ -7879,6 +7897,11 @@ textarea.form-control-lg {
 }
 
 .bg-light {
+  --bs-bg-opacity: 0.1;
+  background-color: rgb(var(--prime-grey-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-lightgrey {
   --bs-bg-opacity: 0.1;
   background-color: rgb(var(--prime-grey-rgb), var(--bs-bg-opacity)) !important;
 }
