@@ -24,6 +24,7 @@
     <title>Interactive Animation PRIME</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
 </head>
 <body id="page-top">
@@ -31,7 +32,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <div class="container px-4">
         <!--        <a class="navbar-brand" href="#page-top">PRIME presents: Interactive animation</a>-->
-        <a class="navbar-brand" href="../siggraph_web3d/index2.html">PRIME presents: Interactive animation</a>
+        <a class="navbar-brand" href="../siggraph_web3d/index.html">PRIME presents: Interactive animation</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
@@ -40,7 +41,7 @@
                 <li class="nav-item"><a class="nav-link" href="#part2">Part 2</a></li>
                 <li class="nav-item"><a class="nav-link" href="#part3">Part 3</a></li>
                 <li class="nav-item"><a class="nav-link" href="#part4">Part 4</a></li>
-                <li class="nav-item"><a class="nav-link" href="#part1">Usage</a></li>
+                <li class="nav-item"><a class="nav-link" href="#usage">Usage</a></li>
                 <li class="nav-item"><a class="nav-link" href="#exercises">Exercises</a></li>
             </ul>
         </div>
@@ -48,17 +49,60 @@
 </nav>
 <!-- Header-->
 <header class="bg-blue bg-gradient text-white" style="background-color:red;">
-    <div class="container px-4 text-center" >
-        <img src="assets/Header.png">
-        <!--        <h1 class="fw-bolder">A visualisation of directional derivatives & level curves </h1>-->
-        <p class="lead-darkblue">A visualisation of directional derivatives & level curves</p>
-        <a class="btn btn-lg btn-white" href="#part1">Jump to visualisations!</a>
+    <div  id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active"> <!-- style="background-image: url('assets/gifs/screengrab2.gif')"> -->
+                <div class="container px-4 text-center" >
+<!--                    <img src="assets/gifs/screengrab3_fullscreen.gif" style="padding-top: 100px; padding-bottom:120px" width="100%">-->
+                </div>
+                <div class="carousel-caption">
+                    <h1 class="fw-bolder">Interactive Animation</h1>
+<!--                    <h5>Interactive Animation</h5>-->
+                    <p>A visualisation of directional derivatives & level curves.</p>
+                </div>
+            </div>
+            <div class="carousel-item" >
+                <div class="container px-4 text-center" >
+<!--                    <img src="assets/gifs/screengrab3_fullscreen.gif" style="padding-top: 100px; padding-bottom:120px" width="100%">-->
+                </div>
+                <div class="carousel-caption">
+                    <h5>Interactive Animation</h5>
+                    <p>A visualisation of directional derivatives & level curves.</p>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('https://source.unsplash.com/szFUQoyvrxM/1920x1080')">
+                <div class="carousel-caption">
+                    <h5>Interactive Animation</h5>
+                    <p>A visualisation of directional derivatives & level curves.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
+<!--    <div class="container px-4 text-center" >-->
+<!--&lt;!&ndash;        <img src="assets/Header.png">&ndash;&gt;-->
+<!--        <h1 class="fw-bolder">Interactive Animation</h1>-->
+<!--        <p class="lead-darkblue">A visualisation of directional derivatives & level curves</p>-->
+<!--        <a class="btn btn-lg btn-white" href="#part1">Jump to visualisations!</a>-->
+<!--    </div>-->
 </header>
 <!-- About section-->
 <section class="bg-lightgrey" id="about">
     <div class="container px-4">
         <div class="row gx-4 justify-content-center">
+            <a class="btn btn-lg btn-white" href="#part1">Jump to visualisations!</a>
             <div class="col-lg-8">
                 <h2>Introduction</h2>
                 <p class="lead">We present our short series of interactive animations on directional derivatives and level curves.</p>
@@ -81,7 +125,7 @@
             <div class="col-lg-8">
                 <h2>Part 1: Level curves</h2>
                 <p class="lead">Press play to start and try interactions in the screen!</p>
-                <iframe src="https://prime-applets.ewi.tudelft.nl/prime-interactive-videos/#/part1" title="Part 1" width="100%" height="500px"></iframe>
+                <iframe src="https://sranjha.github.io/prime-interactive-videos/#/part1?t=1m" title="Part 1" width="100%" height="500px"></iframe>
                 Try to change the function that is plotted at 0:34, drag the 3D plot to adjust your view and eplore it. Or adjust the plane height and add new contour lines via the controls menu!
             </div>
         </div>
@@ -94,7 +138,7 @@
             <div class="col-lg-8">
                 <h2>Part 2: Directional derivatives</h2>
                 <p class="lead">Press play to start and try interactions in the screen!</p>
-                <iframe src="https://prime-applets.ewi.tudelft.nl/prime-interactive-videos/#/part2" title="Part 2" width="100%" height="500px"></iframe>
+                <iframe src="https://sranjha.github.io/prime-interactive-videos/#/part2?t=52s" title="Part 2" width="100%" height="500px"></iframe>
                 Drag the sliders in the controls menu to adjust the position of the point f(x0, y0), change the angle theta and toggle the visibility of u and theta in the controls menu!
             </div>
         </div>
@@ -107,7 +151,7 @@
             <div class="col-lg-8">
                 <h2>Part 3: Directional derivatives & Level curves</h2>
                 <p class="lead">Press play to start and try interactions in the screen!</p>
-                <p class="lead"><iframe src="https://prime-applets.ewi.tudelft.nl/prime-interactive-videos/#/part3" title="Part 3" width="100%" height="500px"></iframe></p>
+                <p class="lead"><iframe src="https://sranjha.github.io/prime-interactive-videos/#/part3?t=52s" title="Part 3" width="100%" height="500px"></iframe></p>
                 Adjust the level curve distance yourself in the controls menu.
             </div>
         </div>
@@ -120,7 +164,7 @@
             <div class="col-lg-8">
                 <h2>Part 4: Gradient & Level curves</h2>
                 <p class="lead">Press play to start and try interactions in the screen!</p>
-                <p class="lead"><iframe src="https://prime-applets.ewi.tudelft.nl/prime-interactive-videos/#/part4" title="Part 4" width="100%" height="500px"></iframe></p>
+                <p class="lead"><iframe src="https://sranjha.github.io/prime-interactive-videos/#/part4?t=52s" title="Part 4" width="100%" height="500px"></iframe></p>
                 The final bonus part!
             </div>
         </div>
@@ -161,7 +205,7 @@
         </p></div>
 </footer>
 <!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>-->
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
 </body>
