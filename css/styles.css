@@ -6068,13 +6068,14 @@ textarea.form-control-lg {
   content: "";
 }
 .carousel-item {
-  height: 100%;
+  border: 50px solid #000000;
+  height: calc(100vh - 100px);
   min-height: 350px;
   background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
 }
 /*.carousel-item {*/
 /*  position: relative;*/
