@@ -38,7 +38,7 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="#technical">Technical</a></li>
-                <li class="nav-item"><a class="nav-link" href="#rendering">Rendering</a></li>
+                <li class="nav-item"><a class="nav-link" href="#timelines">Timelines</a></li>
                 <li class="nav-item"><a class="nav-link" href="#usage">Usage</a></li>
                 <li class="nav-item"><a class="nav-link" href="#results">Results</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -126,38 +126,38 @@
         <div class="row gx-4 justify-content-center">
             <div class="col-lg-8">
                 <h2>Technical solution</h2>
-                <p> Our web-based application combines React, ThreeJS and GSAP. The interactive animations use GSAP Timelines and Tweens for the animations. ThreeJS is used for 3d graph plotting and animating. To enable state and controlled flow of information, everything is wrapped in React components. </p>
-                <p> While there is <a href="https://greensock.com/react/">some documentation</a> on using React with GSAP, the approach used in this project differs in some specific ways to make the Timelines and Tweens as simple as possible.</p>
-                <p>Further technical documentation will soon be released, access can be requested already. We are happy to share our work and enable others to work on more interactive animations. </p>
+                <p> Our web-based application combines React, ThreeJS and GSAP. The interactive animations use GSAP Timelines and Tweens for the animations. Our approach to rendering is fairly straightforward, we use ThreeJS for WebGL and canvas for 2D rendering and GSAP for tweening. The novelty of our approach is in the use of React and GSAP timelines and tweens by using two state objects, which we describe in <a href="#timelines">Timelines & State</a>. </p>
+
+                <p>Further technical documentation will be released, access can be requested already. We are happy to share our work and enable others to work on more interactive animations. </p>
             </div>
         </div>
     </div>
 </section>
-<!--Rendering method-->
-<section class="bg-lightgrey" id="rendering">
+<section class="bg-lightgrey" id="timelines">
     <div class="container px-4">
         <div class="row gx-4 justify-content-center">
             <div class="col-lg-8">
-                <h2>Rendering method</h2>
-                <p> Do we have any? </p>
-            </div>
-        </div>
-    </div>
-</section>
-<!--Timelines-->
-<section class="bg-lightblue" id="Timelines">
-    <div class="container px-4">
-        <div class="row gx-4 justify-content-center">
-            <div class="col-lg-8">
-                <h2>Timelines</h2>
-                <p> I think timelines are the most interesting part, technically </p>
+                <h2>Timelines & State </h2>
+                <p> While there is <a href="https://greensock.com/react/">some documentation</a> on using React with GSAP, the approach used in this project differs in some specific ways to make the Timelines and Tweens as simple as possible, in particular the way state is handled.</p>
+
+                <p class="lead">Animation components with Timelines</p>
+                <p>We made animation components, in which we set up a main GSAP timeline. Each section in the animation has its own sub-timeline, these are all children of the main timeline. In the animation component constructor, we create an object that stores the sub-timeline states. These states will contain the start state the animation ought to be when a sub-timeline begins.</p>
+
+                <p class="lead">Adding sub-timelines</p>
+                <p>The sub-timelines (all subsections of the animation) are added to the main timeline after mounting the animation component: the constructor is that GSAP is not able to create Tweens for some targets if they are not rendered yet. This happens for example when tweening React refs. Ensuring that the animation component has mounted, also ensures that all Tween targets are available when GSAP tries to access them.</p>
+
+                <p class="lead">Start & State</p>
+                <p>Each sub-timeline has a set duration, a position on the main timeline and a label. Within each sub-timeline component, we set labels for the state in which they ought to start playing; their start-state. Adding these labels to the main timeline allows the user to skip through the timeline freely. The timeline and their respective states are passed to the component that handles user input and keeps the timeline and audio synchronized. When the user skips to a particular timestamp in the animation, this input component fetches the start-state corresponding to the label associated with the timestamp and sets the start-state. This ensures that the animation component is in the expected state at the start of each child timeline.</p>
+
+                <p class="lead">Tweens & State</p>
+                <p>Each sub-timeline has one or more GSAP Tweens added to it, as well as a start-state. The start-state is set at the start of a tween. GSAP modifies the target object of a tween directly, which is not allowed for React state, as this will not update the component. To circumvent this, we have introduced a second state for the tween targets, which we call animation-state. The object animation-state is used as tween target and contains the same values as the component state, but since it is not the actual state of the component, we can let GSAP directly modify animation-state. Each update to the animation-state is then propagated to the components state, each time the tween is updated.</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Usage section-->
-<section class="bg-lightgrey" id="usage">
+<section class="bg-lightblue" id="usage">
     <div class="container px-4">
         <div class="row gx-4 justify-content-center">
             <div class="col-lg-8">
@@ -172,7 +172,7 @@
     </div>
 </section>
 <!-- Part 1 -->
-<section class="bg-lightblue" id="results">
+<section class="bg-lightgrey" id="results">
     <div class="container px-4">
         <div class="row gx-4 justify-content-center">
             <div class="col-lg-8">
@@ -217,7 +217,7 @@
     </div>
 </section>
 <!--Contact-->
-<section id="contact" class="bg-lightgrey">
+<section id="contact" class="bg-lightblue">
     <div class="container px-4">
         <div class="row gx-4 justify-content-center">
             <div class="col-lg-8">
